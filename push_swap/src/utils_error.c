@@ -6,7 +6,7 @@
 /*   By: cballet <cballet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 12:54:04 by cballet           #+#    #+#             */
-/*   Updated: 2024/03/11 16:25:31 by cballet          ###   ########.fr       */
+/*   Updated: 2024/03/13 13:47:01 by cballet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,32 +27,31 @@ int	is_sign(char c)
 	return (0);
 }
 
-void	exit_error(t_stack *stack_a, t_stack *stack_b, char **argv)
+void	exit_error(t_stack *stack_a, t_stack *stack_b, char **argv, int argc)
 {
 	int	i;
-	printf("exit_error1\n");
+
 	if (stack_a != NULL)
 		ft_stackclear(&stack_a);
-
 	if (stack_b != NULL)
 		ft_stackclear(&stack_b);
 	i = 1;
-	while(argv[i])
+	if (argc == 2)
 	{
-		free(argv[i]);
-		i++;
+		while (argv[i])
+		{
+			free(argv[i]);
+			i++;
+		}
+		free(argv);
 	}
-	free (argv);
-	exit (1);
+	write(2, "Error\n", 6);
+	exit(1);
 }
 
-void	exit_error2(t_stack *stack_a, t_stack *stack_b)
+void	exit_error2(t_stack *new)
 {
-	if (stack_a != NULL)
-		ft_stackclear(&stack_a);
-	if (stack_b != NULL)
-		ft_stackclear(&stack_b);
-
-	write (2, "Error\n", 6);
-	exit (1);
+	free(new);
+	write(2, "Error\n", 6);
+	exit(1);
 }

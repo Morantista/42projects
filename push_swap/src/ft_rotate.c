@@ -6,7 +6,7 @@
 /*   By: cballet <cballet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 17:43:23 by cballet           #+#    #+#             */
-/*   Updated: 2024/03/11 12:55:48 by cballet          ###   ########.fr       */
+/*   Updated: 2024/03/12 12:07:39 by cballet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_rotate(t_stack **stack)
 {
 	t_stack	*tmp;
+
 	if ((*stack)->next)
 	{
 		tmp = (*stack)->next;

@@ -6,7 +6,7 @@
 /*   By: cballet <cballet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 12:57:58 by cballet           #+#    #+#             */
-/*   Updated: 2024/03/11 17:05:54 by cballet          ###   ########.fr       */
+/*   Updated: 2024/03/12 14:11:12 by cballet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ t_stack	*ft_find_best_node(t_stack *stack_a, t_stack *stack_b)
 				ft_find_big_brother(stack_a, stack_b->value), stack_b->index))
 		{
 			best_score = ft_find_best_score(stack_a, stack_b,
-					ft_find_big_brother(stack_a, stack_b->value), stack_b->index);
+					ft_find_big_brother(stack_a, stack_b->value),
+					stack_b->index);
 			node_b = stack_b;
 		}
 		stack_b = stack_b->next;
@@ -83,6 +84,7 @@ void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 	}
 	ft_make_order(stack_a);
 }
+
 void	print_stack(t_stack *node)
 {
 	while (node != NULL)
@@ -109,16 +111,13 @@ int	main(int argc, char **argv)
 	while (argv[++i])
 	{
 		if (!ft_atoi(&nbr, argv[i]))
-			exit_error(stack_a, stack_b, argv);
+			exit_error(stack_a, stack_b, argv, argc);
+		if (!is_not_error(argv) || (is_doublon(stack_a, nbr) == true))
+			exit_error(stack_a, stack_b, argv, argc);
 		new = ft_stacknew(nbr);
-		if (!new || !is_not_error(argv) || is_doublon(stack_a, nbr))
-			exit_error(stack_a, stack_b, argv);
 		ft_stackadd_back(&stack_a, new);
 	}
 	ft_set_index(stack_a);
 	ft_sort(&stack_a, &stack_b);
 	ft_lastclear(&stack_a, argc, argv);
-	return (EXIT_SUCCESS);
 }
-
-

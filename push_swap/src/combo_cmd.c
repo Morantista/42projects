@@ -6,7 +6,7 @@
 /*   By: cballet <cballet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 19:44:43 by cballet           #+#    #+#             */
-/*   Updated: 2024/03/11 12:28:45 by cballet          ###   ########.fr       */
+/*   Updated: 2024/03/12 12:08:24 by cballet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,4 +98,3 @@ void	ft_combo_rrarrb(t_stack **stack_a,
 	}
 	do_pa(stack_a, stack_b);
 }
-

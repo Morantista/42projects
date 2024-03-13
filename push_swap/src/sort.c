@@ -6,7 +6,7 @@
 /*   By: cballet <cballet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 17:18:33 by cballet           #+#    #+#             */
-/*   Updated: 2024/03/11 13:00:21 by cballet          ###   ########.fr       */
+/*   Updated: 2024/03/12 12:16:17 by cballet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void	ft_make_order(t_stack **stack)
 			do_ra(stack);
 			ind_min--;
 		}
-			// (write(1, "ra\n", 3), ft_rotate(stack), ind_min--);
 	}
 	else
 	{
@@ -60,7 +59,6 @@ void	ft_make_order(t_stack **stack)
 			do_rra(stack);
 			ind_min++;
 		}
-			// (write(1, "rra\n", 4), ft_r_rotate(stack), ind_min++);
 	}
 }
 

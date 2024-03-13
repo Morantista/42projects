@@ -80,9 +80,9 @@ char	**ft_split(char *str)
 
 	idx = 1;
 	i = 0;
-	split = (char **)malloc(sizeof(char *) * ft_words_len(str) + 2);
+	split = (char **)malloc(sizeof(char *) * (ft_words_len(str) + 2));
 	if (!split)
-		return (NULL);
+		exit (1);
 	while (str[i])
 	{
 		while (str[i] && ft_is_delimiter(str[i]))
@@ -98,20 +98,3 @@ char	**ft_split(char *str)
 	split[idx] = NULL;
 	return (split);
 }
-
-// int	main(void)
-// {
-// 	int		idx;
-// 	char	**tab;
-
-// 	idx = 0;
-// 	tab = ft_split("1 2 3 4 5 6 7 8 9");
-// 	while (idx < 10)
-// 	{
-// 		printf("String %d : %s\n", idx, tab[idx]);
-// 		free (tab[idx]);
-// 		idx++;
-// 	}
-// 	free(tab);
-// 	return (0);
-// }

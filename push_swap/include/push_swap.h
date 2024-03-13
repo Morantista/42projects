@@ -6,7 +6,7 @@
 /*   By: cballet <cballet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 08:52:21 by cballet           #+#    #+#             */
-/*   Updated: 2024/03/11 14:57:51 by cballet          ###   ########.fr       */
+/*   Updated: 2024/03/12 12:15:04 by cballet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,9 @@ int					is_digit(char c);
 int					is_sign(char c);
 
 /*ERROR*/
-void				exit_error(t_stack *stack_a, t_stack *stack_b, char **argv);
-void				exit_error2(t_stack *stack_a, t_stack *stack_b);
+void				exit_error(t_stack *stack_a, t_stack *stack_b, char **argv,
+						int argc);
+void				exit_error2(t_stack *new);
 int					is_number(char *argv);
 bool				is_doublon(t_stack *stack, int nbr);
 int					is_zero(char *argv);

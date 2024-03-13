@@ -6,7 +6,7 @@
 /*   By: cballet <cballet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 13:24:57 by cballet           #+#    #+#             */
-/*   Updated: 2024/03/11 16:26:01 by cballet          ###   ########.fr       */
+/*   Updated: 2024/03/13 11:36:19 by cballet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ bool	ft_atoi(int *result, char *str)
 void	ft_lastclear(t_stack **stack, int argc, char **argv)
 {
 	t_stack	*tmp;
-	int	i;
+	int		i;
 
 	while (*stack)
 	{
@@ -87,5 +87,3 @@ void	ft_lastclear(t_stack **stack, int argc, char **argv)
 	}
 	*stack = NULL;
 }
-
-
